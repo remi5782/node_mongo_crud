@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var pageInfosSchema = reqiire('./pageInofs.model');
+var pageInfosSchema = require('./pageInfos.model');
 
 pageInfosSchema.statistics ={
     create: function(data, cb){
