@@ -11,9 +11,14 @@ var termination = chalk.bold.magenta;
 
 
 module.exports = function() {
-    mongoose.connect(dbURL);
-    mongoose.connection.on('connected', function(){
+    mongoose.connect(dbURL, { useNewUrlParser: true }, function(err, client){
+
+    
+
+    }).then(client=> console.log('client', client));
+    mongoose.connection.on('connected', function(err, client){
         console.log(connected('Mongoose default connection is open to ', dbURL));
+        console.log('connected to', client);
     })
 
     mongoose.connection.on('error', function(){

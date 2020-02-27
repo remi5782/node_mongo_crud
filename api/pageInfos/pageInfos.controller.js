@@ -19,7 +19,7 @@ exports.createPageInfo = function (req, res, next) {
 }
 
 exports.getPageInfos = function(req, res, next){
-    pageInfos.get({}, function(err, pageInfos){
+    pageInfos.find({}, function(err, pageInfos){
         if(err){
             res.json({
                 error: err
